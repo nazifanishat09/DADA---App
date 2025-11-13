@@ -1,0 +1,242 @@
+import 'package:flutter/material.dart';
+
+import 'LoginPage.dart';
+import 'homePage.dart';
+class RagisterPage extends StatefulWidget {
+  const RagisterPage({super.key});
+
+  @override
+  State<RagisterPage> createState() => _RagisterPageState();
+}
+
+class _RagisterPageState extends State<RagisterPage> {
+  bool isActive = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: Image(image: AssetImage("assets/back.png")),
+        centerTitle: true,
+        title: Image(image: AssetImage("assets/dada-.png")),
+      ),
+      body: SingleChildScrollView(child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 20),
+            Row(
+              spacing: 100,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 60),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (a) => LoginPage()),
+                      );},
+                    child: Text(
+                      "Sign In",
+                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                      });
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(color: Colors.grey, fontSize: 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Container(
+                  height: 3,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                ),
+                Container(
+                  height: 3,
+                  width: 170,
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.all(Radius.circular(50)),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Welcome Back! ",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Color(0xff616161),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              "Please enter your details to login.",
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey,
+              ),
+            ), SizedBox(height: 40),
+            Text("Name"),
+            SizedBox(height: 10),
+            TextField(
+              keyboardType: TextInputType.text,
+
+              decoration: InputDecoration(
+                hintText: "Enter Your Name",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text("Phone Number"),
+            SizedBox(height: 10),
+            TextField(
+              keyboardType: TextInputType.number,
+
+              decoration: InputDecoration(
+                hintText: "Enter Your Phone Number",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text("Password"),
+            SizedBox(height: 10),
+            TextField(
+              keyboardType: TextInputType.visiblePassword,
+              obscureText:  isActive,
+              decoration: InputDecoration(
+                suffixIcon: InkWell(
+                  onTap: () {
+                    isActive = !isActive;
+                    setState(() {});
+                  },
+                  child: Icon(
+                    isActive == true
+                        ? Icons.visibility_off :
+                         Icons.visibility,
+                  ),
+                ),
+                hintText: "Enter Your Password",
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              height: 50,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Color(0xfff5a658),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Center(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (b) => HomePage()),
+                    );
+                  },
+                  child: Text("Ragister", style: TextStyle(fontSize: 18)),
+                ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: Text(
+                "Or",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              height: 50,
+              width: 400,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: Image(image: AssetImage("assets/google sign in.png")),
+            ),
+            SizedBox(height: 10),
+            Container(
+              height: 50,
+              width: 400,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                border: Border.all(color: Colors.grey),
+              ),
+              child: Image(image: AssetImage("assets/FB sign in.png")),
+            ),
+            SizedBox(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Don’t have an account?"),
+                InkWell(
+                  onTap: () {
+                    setState(() {});
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (a) => RagisterPage()),
+                    );
+                  },
+                  child: InkWell(onTap: (){
+                    setState(() {     });
+                    Navigator.push(context, MaterialPageRoute(builder: (a)=>LoginPage()));
+                  },
+                    child: Text(
+                      "Log In",
+                      style: TextStyle(color: Colors.orange),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      )),
+    );
+  }
+}
