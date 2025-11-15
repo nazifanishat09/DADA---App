@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,8 +38,10 @@ class _HomePageState extends State<HomePage> {
             label: 'Home',
           ),
           CurvedNavigationBarItem(
-            child: InkWell(onTap: (){setState(() {});
-    Navigator.push(context, MaterialPageRoute(builder: (a)=>CategoriePage ()));
+            child: InkWell(onTap: (){setState(() {
+              Navigator.push(context, MaterialPageRoute(builder: (a)=>CategoriePage ()));
+            });
+
     },
                 child: Image(image: AssetImage("assets/category.png"))),
             label: 'Category',
