@@ -350,7 +350,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: 19.99),
                   Container(
                     height: 52,
                     width: 172,
