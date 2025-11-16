@@ -1,3 +1,4 @@
+import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
 
 import 'LoginPage.dart';
@@ -161,21 +162,21 @@ class _RagisterPageState extends State<RagisterPage> {
               ),
             ),
             SizedBox(height: 10),
-            Container(
-              height: 50,
-              width: 400,
-              decoration: BoxDecoration(
-                color: Color(0xfff5a658),
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Center(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (b) => HomePage()),
-                    );
-                  },
+            InkWell(onTap: (){
+              setState(() {});
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (b) =>BottomBer()),
+              );
+            },
+              child: Container(
+                height: 50,
+                width: 400,
+                decoration: BoxDecoration(
+                  color: Color(0xfff5a658),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                child: Center(
                   child: Text("Ragister", style: TextStyle(fontSize: 18)),
                 ),
               ),
@@ -214,16 +215,8 @@ class _RagisterPageState extends State<RagisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Don’t have an account?"),
-                InkWell(
-                  onTap: () {
+                  InkWell(onTap: (){
                     setState(() {});
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (a) => RagisterPage()),
-                    );
-                  },
-                  child: InkWell(onTap: (){
-                    setState(() {     });
                     Navigator.push(context, MaterialPageRoute(builder: (a)=>LoginPage()));
                   },
                     child: Text(
@@ -231,7 +224,7 @@ class _RagisterPageState extends State<RagisterPage> {
                       style: TextStyle(color: Colors.orange),
                     ),
                   ),
-                ),
+
               ],
             ),
           ],

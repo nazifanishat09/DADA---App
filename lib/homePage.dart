@@ -1,8 +1,13 @@
+import 'dart:developer';
+
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 
+import 'CartPage.dart';
 import 'CategoriePage.dart';
+import 'ProductsDetails.dart';
+import 'ProfilePage4.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,45 +29,17 @@ class _HomePageState extends State<HomePage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 25),
-            child: Icon(Icons.person),
+            child: InkWell(onTap: (){
+              setState(() {
+                Navigator.push(context,MaterialPageRoute(builder:(a)=>ProfilePage () ));
+              });
+            },
+                child: Icon(Icons.person)),
           ),
         ],
       ),
 
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white,
-        color: Color(0xffF0A769),
-        items: [
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/home.png")),
-            label: 'Home',
-          ),
-          CurvedNavigationBarItem(
-            child: InkWell(onTap: (){setState(() {
-              Navigator.push(context, MaterialPageRoute(builder: (a)=>CategoriePage ()));
-            });
 
-    },
-                child: Image(image: AssetImage("assets/category.png"))),
-            label: 'Category',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.search, color: Colors.grey),
-            label: 'Search',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/cart.png")),
-            label: 'Cart',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/wishlist.png")),
-            label: 'Wishlist',
-          ),
-        ],
-        onTap: (index) {
-          // Handle button tap
-        },
-      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(

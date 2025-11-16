@@ -1,3 +1,4 @@
+import 'package:appdada/ProfilePage4.dart';
 import 'package:flutter/material.dart';
 
 class Profile5Page extends StatefulWidget {
@@ -134,17 +135,29 @@ class _Profile5PageState extends State<Profile5Page> {
                 ),
               ),
               SizedBox(height: 80),
-              Container(
-                height: 45,
-                width: 358,
-                decoration: BoxDecoration(
-                  color: Color(0xffff9900),
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                ),
-                child: Center(
-                  child: Text(
-                    "Save Changes",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              InkWell(
+                onTap: () {
+                  setState(() {});
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (a) => ProfilePage()),
+                  );
+                },
+                child: Container(
+                  height: 45,
+                  width: 358,
+                  decoration: BoxDecoration(
+                    color: Color(0xffff9900),
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Save Changes",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),

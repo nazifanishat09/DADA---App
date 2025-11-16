@@ -2,6 +2,8 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 
+import 'CategoriePage.dart';
+import 'ProductsDetails.dart';
 import 'homePage.dart';
 
 class CartPage extends StatefulWidget {
@@ -24,45 +26,7 @@ class _CartPageState extends State<CartPage> {
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white,
-        color: Color(0xffF0A769),
-        items: [
-          CurvedNavigationBarItem(
-            child: InkWell(
-              onTap: () {
-                setState(() {});
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (a) => HomePage()),
-                );
-              },
 
-              child: Image(image: AssetImage("assets/home.png")),
-            ),
-            label: 'Home',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/category.png")),
-            label: 'Category',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.search, color: Colors.grey),
-            label: 'Search',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/cart.png")),
-            label: 'Cart',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/wishlist.png")),
-            label: 'Wishlist',
-          ),
-        ],
-        onTap: (index) {
-          // Handle button tap
-        },
-      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
@@ -133,8 +97,13 @@ class _CartPageState extends State<CartPage> {
                               borderRadius: BorderRadius.all(
                                 Radius.circular(30),
                               ),
-
-                            ),child: Center(child: Text("2",style: TextStyle(fontWeight: FontWeight.bold),)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "2",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                           //👉👉👉👉👉top button
                           Container(
@@ -234,7 +203,13 @@ class _CartPageState extends State<CartPage> {
                               borderRadius: BorderRadius.all(
                                 Radius.circular(30),
                               ),
-                            ),child: Center(child: Text("2",style: TextStyle(fontWeight: FontWeight.bold),)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "2",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
                           ),
                           //👉👉👉👉👉top button
                           Container(
@@ -376,7 +351,8 @@ class _CartPageState extends State<CartPage> {
                     ],
                   ),
                 ),
-              ), SizedBox(height: 20,),
+              ),
+              SizedBox(height: 20),
               Container(
                 height: 45,
                 width: 358,

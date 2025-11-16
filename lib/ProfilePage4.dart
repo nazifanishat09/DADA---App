@@ -1,4 +1,7 @@
+import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
+
+import 'Profile5.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -51,30 +54,41 @@ class _ProfilePageState extends State<ProfilePage> {
                   spacing: 10,
                   children: [
                     SizedBox(height: 10),
-                    Container(
-                      height: 50,
-                      width: 340,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        color: Color(0xffFAEEE1),
-                      ),
-                      child: Row(
-                        children: [SizedBox(width: 10,),
-                          Icon(Icons.account_circle, color: Colors.grey[800]),SizedBox(width: 30,),
-                          Text(
-                            "My Profile",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[800],
-                              fontWeight: FontWeight.bold,
+                    InkWell(
+                      onTap: () {
+                        setState(() {});
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (a) => Profile5Page()),
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 340,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          color: Color(0xffFAEEE1),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Icon(Icons.account_circle, color: Colors.grey[800]),
+                            SizedBox(width: 30),
+                            Text(
+                              "My Profile",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey[800],
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 170,),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.grey[800],
-                          ),
-                        ],
+                            SizedBox(width: 170),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey[800],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
@@ -85,8 +99,13 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Color(0xffFAEEE1),
                       ),
                       child: Row(
-                        children: [SizedBox(width: 10,),
-                          Icon(Icons.format_list_bulleted, color: Colors.grey[800]),SizedBox(width: 30,),
+                        children: [
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.format_list_bulleted,
+                            color: Colors.grey[800],
+                          ),
+                          SizedBox(width: 30),
                           Text(
                             "My Order",
                             style: TextStyle(
@@ -95,7 +114,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 176,),
+                          SizedBox(width: 176),
                           Icon(
                             Icons.arrow_forward_ios,
                             color: Colors.grey[800],
@@ -111,8 +130,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Color(0xffFAEEE1),
                       ),
                       child: Row(
-                        children: [SizedBox(width: 10,),
-                          Image(image: AssetImage("assets/b.png")),SizedBox(width: 30,),
+                        children: [
+                          SizedBox(width: 10),
+                          Image(image: AssetImage("assets/b.png")),
+                          SizedBox(width: 30),
                           Text(
                             "Offer Order",
                             style: TextStyle(
@@ -121,7 +142,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 165,),
+                          SizedBox(width: 165),
                           Icon(
                             Icons.arrow_forward_ios,
                             color: Colors.grey[800],
@@ -137,8 +158,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         color: Color(0xffFAEEE1),
                       ),
                       child: Row(
-                        children: [SizedBox(width: 10,),
-                          Image(image: AssetImage("assets/a.png")),SizedBox(width: 30,),
+                        children: [
+                          SizedBox(width: 10),
+                          Image(image: AssetImage("assets/a.png")),
+                          SizedBox(width: 30),
                           Text(
                             "My Review",
                             style: TextStyle(
@@ -147,7 +170,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 165,),
+                          SizedBox(width: 165),
                           Icon(
                             Icons.arrow_forward_ios,
                             color: Colors.grey[800],
@@ -155,30 +178,41 @@ class _ProfilePageState extends State<ProfilePage> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 50,
-                      width: 340,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        color: Color(0xffFAEEE1),
-                      ),
-                      child: Row(
-                        children: [SizedBox(width: 10,),
-                      Image(image: AssetImage("assets/c.png")),SizedBox(width: 30,),
-                          Text(
-                            "Logout",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[800],
-                              fontWeight: FontWeight.bold,
+                    InkWell(
+                      onTap: () {
+                        setState(() {});
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (a) => BottomBer()),
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: 340,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          color: Color(0xffFAEEE1),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Image(image: AssetImage("assets/c.png")),
+                            SizedBox(width: 30),
+                            Text(
+                              "Logout",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey[800],
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          SizedBox(width: 200,),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.grey[800],
-                          ),
-                        ],
+                            SizedBox(width: 200),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey[800],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

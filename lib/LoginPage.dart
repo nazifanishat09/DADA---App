@@ -1,3 +1,4 @@
+import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
 
 import 'RagisterPage.dart';
@@ -158,21 +159,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 40),
-              Container(
-                height: 50,
-                width: 400,
-                decoration: BoxDecoration(
-                  color: Color(0xfff5a658),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-                child: Center(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (b) => HomePage()),
-                      );
-                    },
+              InkWell(onTap: (){
+                setState(() {});
+                Navigator.pushReplacement(context,MaterialPageRoute(builder: (a)=>BottomBer()));
+              },
+                child: Container(
+                  height: 50,
+                  width: 400,
+                  decoration: BoxDecoration(
+                    color: Color(0xfff5a658),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  child: Center(
                     child: Text("Log In", style: TextStyle(fontSize: 18)),
                   ),
                 ),

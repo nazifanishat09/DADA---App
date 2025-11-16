@@ -3,6 +3,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'Discount.dart';
 import 'homePage.dart';
 
 class CategoriePage extends StatefulWidget {
@@ -29,7 +30,12 @@ class _CategoriePageState extends State<CategoriePage> {
             padding: const EdgeInsets.only(right: 25),
             child: Stack(
               children: [
-                Image(image: AssetImage("assets/ic.png")),
+                InkWell(onTap: (){
+                  setState(() {
+
+                  }); Navigator.push(context, MaterialPageRoute(builder: (a)=>DiscountPage()));
+                },
+                    child: Image(image: AssetImage("assets/ic.png"))),
                 Positioned(
                   right: 1,
                   top: 1,
@@ -50,45 +56,7 @@ class _CategoriePageState extends State<CategoriePage> {
           ),
         ],
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white,
-        color: Color(0xffF0A769),
-        items: [
-          CurvedNavigationBarItem(
-            child: InkWell(
-              onTap: () {
-                setState(() {});
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (a) => HomePage()),
-                );
-              },
 
-              child: Image(image: AssetImage("assets/home.png")),
-            ),
-            label: 'Home',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/category.png")),
-            label: 'Category',
-          ),
-          CurvedNavigationBarItem(
-            child: Icon(Icons.search, color: Colors.grey),
-            label: 'Search',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/cart.png")),
-            label: 'Cart',
-          ),
-          CurvedNavigationBarItem(
-            child: Image(image: AssetImage("assets/wishlist.png")),
-            label: 'Wishlist',
-          ),
-        ],
-        onTap: (index) {
-          // Handle button tap
-        },
-      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(

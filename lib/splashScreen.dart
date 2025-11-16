@@ -9,7 +9,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   NextPage()async{
-    await Future.delayed(Duration(seconds: 7));
+    await Future.delayed(Duration(seconds:2));
     setState(() {});
     Navigator.pushReplacement(context,MaterialPageRoute (builder: (a) => LoginPage()));
   }
