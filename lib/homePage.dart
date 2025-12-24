@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                 spacing: 20,
                 children: [
                   Container(
-                    height: 43,
+                    height: 43.1,
                     width: 293,
                     decoration: BoxDecoration(
                       color: Color(0xfff5f5f5),
