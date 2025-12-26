@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'CartPage.dart';
 import 'CategoriePage.dart';
 import 'Discount.dart';
-import 'LoginPage.dart';
+import 'login/LoginPage.dart';
 import 'ProductsDetails.dart';
 import 'Profile5.dart';
 import 'ProfilePage4.dart';
-import 'RagisterPage.dart';
+import 'register/RagisterPage.dart';
 import 'homePage.dart';
 
 void main() {

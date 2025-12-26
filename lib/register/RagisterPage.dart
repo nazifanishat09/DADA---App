@@ -1,20 +1,18 @@
 import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
 
-import 'RagisterPage.dart';
-import 'homePage.dart';
+import '../login/LoginPage.dart';
+import '../homePage.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RagisterPage extends StatefulWidget {
+  const RagisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RagisterPage> createState() => _RagisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RagisterPageState extends State<RagisterPage> {
   bool isActive = true;
-  bool isSelect = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +22,12 @@ class _LoginPageState extends State<LoginPage> {
         centerTitle: true,
         title: Image(image: AssetImage("assets/dada-.png")),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Divider(height: 10, color: Colors.grey[200]),
               SizedBox(height: 20),
               Row(
                 spacing: 100,
@@ -38,7 +35,12 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 60),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (a) => LoginPage()),
+                        );
+                      },
                       child: Text(
                         "Sign In",
                         style: TextStyle(color: Colors.grey, fontSize: 16),
@@ -49,13 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 30),
                     child: InkWell(
                       onTap: () {
-                        setState(() {
-                          isSelect = true;
-                        });
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (a) => RagisterPage()),
-                        );
+                        setState(() {});
                       },
                       child: Text(
                         "Sign Up",
@@ -71,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 3,
                     width: 170,
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Colors.grey,
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                   ),
@@ -79,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 3,
                     width: 170,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.orange,
                       borderRadius: BorderRadius.all(Radius.circular(50)),
                     ),
                   ),
@@ -104,9 +100,29 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 40),
+              Text("Name"),
+              SizedBox(height: 10),
+              TextField(
+                cursorColor: Colors.orange,
+                keyboardType: TextInputType.text,
+
+                decoration: InputDecoration(
+                  hintText: "Enter Your Name",
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
               Text("Phone Number"),
               SizedBox(height: 10),
               TextField(
+                cursorColor: Colors.orange,
                 keyboardType: TextInputType.number,
 
                 decoration: InputDecoration(
@@ -121,10 +137,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 20),
               Text("Password"),
               SizedBox(height: 10),
               TextField(
+                cursorColor: Colors.orange,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: isActive,
                 decoration: InputDecoration(
@@ -151,18 +168,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 10),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Forgot Password",
-                  style: TextStyle(color: Colors.orange),
-                ),
-              ),
-              SizedBox(height: 40),
-              InkWell(onTap: (){
-                setState(() {});
-                Navigator.pushReplacement(context,MaterialPageRoute(builder: (a)=>BottomBer()));
-              },
+              InkWell(
+                onTap: () {
+                  setState(() {});
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (b) => BottomBer()),
+                  );
+                },
                 child: Container(
                   height: 50,
                   width: 400,
@@ -171,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: Center(
-                    child: Text("Log In", style: TextStyle(fontSize: 18)),
+                    child: Text("Ragister", style: TextStyle(fontSize: 18)),
                   ),
                 ),
               ),
@@ -208,17 +221,17 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?"),
+                  Text("Don’t have an account?"),
                   InkWell(
                     onTap: () {
                       setState(() {});
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (a) => RagisterPage()),
+                        MaterialPageRoute(builder: (a) => LoginPage()),
                       );
                     },
                     child: Text(
-                      "Register here",
+                      "Log In",
                       style: TextStyle(color: Colors.orange),
                     ),
                   ),

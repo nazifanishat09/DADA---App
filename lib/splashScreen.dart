@@ -1,4 +1,4 @@
-import 'package:appdada/LoginPage.dart';
+import 'package:appdada/login/LoginPage.dart';
 import 'package:flutter/material.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
