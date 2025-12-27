@@ -234,7 +234,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 10),
                 Container(
-                  height: 50,
+                  height: 50.1,
                   width: 400,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
