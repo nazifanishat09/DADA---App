@@ -13,6 +13,10 @@ class RagisterPage extends StatefulWidget {
 
 class _RagisterPageState extends State<RagisterPage> {
   bool isActive = true;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,6 +107,7 @@ class _RagisterPageState extends State<RagisterPage> {
               Text("Name"),
               SizedBox(height: 10),
               TextField(
+
                 cursorColor: Colors.orange,
                 keyboardType: TextInputType.text,
 

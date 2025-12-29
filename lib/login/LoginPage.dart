@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../register/RagisterPage.dart';
 import '../homePage/homePage.dart';
 import '../widget/customTextField.dart';
+import '../widget/textFormField.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,6 +18,12 @@ class _LoginPageState extends State<LoginPage> {
   bool isSelect = true;
 
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController nameC = TextEditingController();
+  final TextEditingController addressC = TextEditingController();
+  final TextEditingController passC = TextEditingController();
+  final TextEditingController confirmPassC = TextEditingController();
+  final TextEditingController phoneC = TextEditingController();
+  final TextEditingController emailC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +118,20 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 40),
                 Text("Phone Number"),
                 SizedBox(height: 10),
+                TextFormFieldWidget(
+                  phoneC: phoneC,
+                  validator: (v) {
+                    if (v == null || v.isEmpty) {
+                      return "Please Enter Your Phone Number";
+                    } else {
+                      return null;
+                    }
+                  },
+                  title: 'Your Phone Number',
+                ),
+                SizedBox(height: 40),
+                Text("Password"),
+                SizedBox(height: 10),
                 TextFormField(
                   validator: (v) {
                     if (v == null || v.isEmpty) {
@@ -121,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
 
                   cursorColor: Colors.orange,
-                  keyboardType: TextInputType.number,
+                  keyboardType: TextInputType.visiblePassword,
                   obscureText: isActive,
                   decoration: InputDecoration(
                     suffixIcon: InkWell(
@@ -135,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                             : Icons.visibility,
                       ),
                     ),
-                    hintText: "Enter Your Phone Number ",
+                    hintText: "Enter Your Password",
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.orange),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -146,10 +167,6 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 40),
-                Text("Password"),
-                SizedBox(height: 10),
-                CustomTextFormField(),
                 SizedBox(height: 10),
                 Align(
                   alignment: Alignment.centerRight,
@@ -160,7 +177,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 40),
                 InkWell(
-                  onTap: () {if(_formKey.currentState!.validate());
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) ;
                     // setState(() {});
                     // Navigator.pushReplacement(
                     //   context,
@@ -234,44 +252,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-
-  TextFormField CustomTextFormField() {
-    return TextFormField(
-                validator: (v) {
-                  if (v == null || v.isEmpty) {
-                    return "Please Enter Your Phone Number";
-                  } else {
-                    return null;
-                  }
-                },
-
-                cursorColor: Colors.orange,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: isActive,
-                decoration: InputDecoration(
-                  suffixIcon: InkWell(
-                    onTap: () {
-                      isActive = !isActive;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      isActive == true
-                          ? Icons.visibility_off
-                          : Icons.visibility,
-                    ),
-                  ),
-                  hintText: "Enter Your Password",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.orange),
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
-              );
   }
 }
