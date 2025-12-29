@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(theme: ThemeData.light(),
     debugShowCheckedModeBanner:false,
-    home:RagisterPage(),
+    home:LoginPage(),
     );
   }
 }

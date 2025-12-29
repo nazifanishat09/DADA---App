@@ -1,4 +1,5 @@
 import 'package:appdada/bottomBer.dart';
+import 'package:appdada/widget/textWidget.dart';
 import 'package:flutter/material.dart';
 
 import '../register/RagisterPage.dart';
@@ -113,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 40),
-                Text("Phone Number"),
+                TextWidget(title: "Phone Number",fs: 10,),
                 SizedBox(height: 10),
                 TextFormFieldWidget(
                   phoneC: phoneC,
@@ -129,40 +130,16 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 40),
                 Text("Password"),
                 SizedBox(height: 10),
-                TextFormField(
+                TextFormFieldWidget(
+                  phoneC: passC,
                   validator: (v) {
                     if (v == null || v.isEmpty) {
-                      return "Please Enter Your Phone Number";
+                      return "Please Enter Your Password";
                     } else {
                       return null;
                     }
                   },
-
-                  cursorColor: Colors.orange,
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: isActive,
-                  decoration: InputDecoration(
-                    suffixIcon: InkWell(
-                      onTap: () {
-                        isActive = !isActive;
-                        setState(() {});
-                      },
-                      child: Icon(
-                        isActive == true
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                      ),
-                    ),
-                    hintText: "Enter Your Password",
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.grey),
-                    ),
-                  ),
+                  title: "Your Password",
                 ),
                 SizedBox(height: 10),
                 Align(

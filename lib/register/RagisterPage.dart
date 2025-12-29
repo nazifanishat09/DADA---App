@@ -92,7 +92,7 @@ class _RagisterPageState extends State<RagisterPage> {
                 ],
               ),
               SizedBox(height: 20),
-              TextWidget(),
+              TextWidget(title: 'Welcome Back!'),
               SizedBox(height: 20),
               Text(
                 "Please enter your details to login.",
@@ -103,7 +103,7 @@ class _RagisterPageState extends State<RagisterPage> {
                 ),
               ),
               SizedBox(height: 40),
-              Text("Name"),
+              TextWidget(title: "Name"),
               SizedBox(height: 10),
               TextFormFieldWidget(
                 phoneC: phoneC,
@@ -114,32 +114,27 @@ class _RagisterPageState extends State<RagisterPage> {
                     return null;
                   }
                 },
-                title: " Your Phone Number ",
+                title: " Your Phone Name ", onTep: () {  },
               ),
 
               SizedBox(height: 20),
-              Text("Phone Number"),
+              TextWidget(title: "Phone Number"),
               SizedBox(height: 10),
-              TextField(
-                cursorColor: Colors.orange,
-                keyboardType: TextInputType.number,
-
-                decoration: InputDecoration(
-                  hintText: "Enter Your Phone Number",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
+              TextFormFieldWidget(
+                phoneC: passC,
+                validator: (v) {
+                  if (v == null || v.isEmpty) {
+                    return "Please Enter Your Phone Number";
+                  } else {
+                    return null;
+                  }
+                },
+                title: "Your Phone Number", onTep: () {  },
               ),
               SizedBox(height: 20),
               Text("Password"),
               SizedBox(height: 10),
-              TextField(
+              TextFormField(
                 cursorColor: Colors.orange,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: isActive,
@@ -243,5 +238,3 @@ class _RagisterPageState extends State<RagisterPage> {
     );
   }
 }
-
-
