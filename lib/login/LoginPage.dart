@@ -18,12 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   bool isSelect = true;
 
   final _formKey = GlobalKey<FormState>();
-  final TextEditingController nameC = TextEditingController();
-  final TextEditingController addressC = TextEditingController();
-  final TextEditingController passC = TextEditingController();
-  final TextEditingController confirmPassC = TextEditingController();
   final TextEditingController phoneC = TextEditingController();
-  final TextEditingController emailC = TextEditingController();
+
+  final TextEditingController passC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,10 @@
 import 'package:appdada/bottomBer.dart';
+import 'package:appdada/widget/textFormField.dart';
 import 'package:flutter/material.dart';
 
 import '../login/LoginPage.dart';
 import '../homePage/homePage.dart';
+import '../widget/textWidget.dart';
 
 class RagisterPage extends StatefulWidget {
   const RagisterPage({super.key});
@@ -14,8 +16,12 @@ class RagisterPage extends StatefulWidget {
 class _RagisterPageState extends State<RagisterPage> {
   bool isActive = true;
 
-
-
+  final TextEditingController nameC = TextEditingController();
+  final TextEditingController addressC = TextEditingController();
+  final TextEditingController passC = TextEditingController();
+  final TextEditingController confirmPassC = TextEditingController();
+  final TextEditingController phoneC = TextEditingController();
+  final TextEditingController emailC = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -86,14 +92,7 @@ class _RagisterPageState extends State<RagisterPage> {
                 ],
               ),
               SizedBox(height: 20),
-              Text(
-                "Welcome Back! ",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff616161),
-                ),
-              ),
+              TextWidget(),
               SizedBox(height: 20),
               Text(
                 "Please enter your details to login.",
@@ -106,23 +105,18 @@ class _RagisterPageState extends State<RagisterPage> {
               SizedBox(height: 40),
               Text("Name"),
               SizedBox(height: 10),
-              TextField(
-
-                cursorColor: Colors.orange,
-                keyboardType: TextInputType.text,
-
-                decoration: InputDecoration(
-                  hintText: "Enter Your Name",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
+              TextFormFieldWidget(
+                phoneC: phoneC,
+                validator: (v) {
+                  if (v == null || v.isEmpty) {
+                    return "Please Enter Your Name";
+                  } else {
+                    return null;
+                  }
+                },
+                title: " Your Phone Number ",
               ),
+
               SizedBox(height: 20),
               Text("Phone Number"),
               SizedBox(height: 10),
@@ -249,3 +243,5 @@ class _RagisterPageState extends State<RagisterPage> {
     );
   }
 }
+
+
