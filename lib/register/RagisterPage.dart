@@ -2,7 +2,7 @@ import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
 
 import '../login/LoginPage.dart';
-import '../homePage.dart';
+import '../homePage/homePage.dart';
 
 class RagisterPage extends StatefulWidget {
   const RagisterPage({super.key});

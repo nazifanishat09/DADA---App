@@ -2,7 +2,7 @@ import 'package:appdada/bottomBer.dart';
 import 'package:flutter/material.dart';
 
 import '../register/RagisterPage.dart';
-import '../homePage.dart';
+import '../homePage/homePage.dart';
 import '../widget/customTextField.dart';
 
 class LoginPage extends StatefulWidget {
@@ -149,41 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 40),
                 Text("Password"),
                 SizedBox(height: 10),
-                TextFormField(
-                  validator: (v) {
-                    if (v == null || v.isEmpty) {
-                      return "Please Enter Your Phone Number";
-                    } else {
-                      return null;
-                    }
-                  },
-
-                  cursorColor: Colors.orange,
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: isActive,
-                  decoration: InputDecoration(
-                    suffixIcon: InkWell(
-                      onTap: () {
-                        isActive = !isActive;
-                        setState(() {});
-                      },
-                      child: Icon(
-                        isActive == true
-                            ? Icons.visibility_off
-                            : Icons.visibility,
-                      ),
-                    ),
-                    hintText: "Enter Your Password",
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.orange),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.grey),
-                    ),
-                  ),
-                ),
+                CustomTextFormField(),
                 SizedBox(height: 10),
                 Align(
                   alignment: Alignment.centerRight,
@@ -268,5 +234,44 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+
+  TextFormField CustomTextFormField() {
+    return TextFormField(
+                validator: (v) {
+                  if (v == null || v.isEmpty) {
+                    return "Please Enter Your Phone Number";
+                  } else {
+                    return null;
+                  }
+                },
+
+                cursorColor: Colors.orange,
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: isActive,
+                decoration: InputDecoration(
+                  suffixIcon: InkWell(
+                    onTap: () {
+                      isActive = !isActive;
+                      setState(() {});
+                    },
+                    child: Icon(
+                      isActive == true
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                  ),
+                  hintText: "Enter Your Password",
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.orange),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                ),
+              );
   }
 }

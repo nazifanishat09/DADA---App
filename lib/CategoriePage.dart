@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'Discount.dart';
-import 'homePage.dart';
+import 'homePage/homePage.dart';
 
 class CategoriePage extends StatefulWidget {
   const CategoriePage({super.key});

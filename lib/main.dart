@@ -11,7 +11,7 @@ import 'ProductsDetails.dart';
 import 'Profile5.dart';
 import 'ProfilePage4.dart';
 import 'register/RagisterPage.dart';
-import 'homePage.dart';
+import 'homePage/homePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(theme: ThemeData.light(),
     debugShowCheckedModeBanner:false,
-    home:LoginPage(),
+    home:RagisterPage(),
     );
   }
 }
