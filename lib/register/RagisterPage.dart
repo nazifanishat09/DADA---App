@@ -114,7 +114,8 @@ class _RagisterPageState extends State<RagisterPage> {
                     return null;
                   }
                 },
-                title: " Your Phone Name ", onTep: () {  },
+                title: " Your Phone Name ",
+                onTep: () {},
               ),
 
               SizedBox(height: 20),
@@ -129,37 +130,17 @@ class _RagisterPageState extends State<RagisterPage> {
                     return null;
                   }
                 },
-                title: "Your Phone Number", onTep: () {  },
+                title: "Your Phone Number",
+                onTep: () {},
               ),
               SizedBox(height: 20),
               Text("Password"),
               SizedBox(height: 10),
-              TextFormField(
-                cursorColor: Colors.orange,
-                keyboardType: TextInputType.visiblePassword,
-                obscureText: isActive,
-                decoration: InputDecoration(
-                  suffixIcon: InkWell(
-                    onTap: () {
-                      isActive = !isActive;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      isActive == true
-                          ? Icons.visibility_off
-                          : Icons.visibility,
-                    ),
-                  ),
-                  hintText: "Enter Your Password",
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(color: Colors.grey),
-                  ),
-                ),
+              TextFormFieldWidget(
+                phoneC: passC,
+                title: "Your Password",
+                supIcon: InkWell( onTap: (){},
+                    child: Icon(Icons.visibility)),
               ),
               SizedBox(height: 10),
               InkWell(

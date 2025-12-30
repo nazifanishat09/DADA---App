@@ -10,7 +10,7 @@ class TextWidget extends StatelessWidget {
     required this.title,
   });
   final FontWeight? fw;
-  final int? fs;
+  final double? fs;
   final Color? fc;
   final int? maxline;
   final String title;
@@ -20,9 +20,9 @@ class TextWidget extends StatelessWidget {
     return Text(
       "$title ",
       style: TextStyle(
-        fontSize: 22,
+        fontSize:fs,
         fontWeight: fw,
-        color: Color(0xff616161),
+        color: fc,
       ),
     );
   }

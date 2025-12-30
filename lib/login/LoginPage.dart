@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 40),
-                TextWidget(title: "Phone Number",fs: 10,),
+                TextWidget(title: "Phone Number",),
                 SizedBox(height: 10),
                 TextFormFieldWidget(
                   phoneC: phoneC,
