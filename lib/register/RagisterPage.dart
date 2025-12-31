@@ -137,12 +137,18 @@ class _RagisterPageState extends State<RagisterPage> {
               Text("Password"),
               SizedBox(height: 10),
               TextFormFieldWidget(
+                validator: (v) {
+                  if (v == null || v.isEmpty) {
+                    return "Please Enter Your Phone Number";
+                  } else {
+                    return null;
+                  }
+                },
                 phoneC: passC,
                 title: "Your Password",
-                supIcon: InkWell( onTap: (){},
-                    child: Icon(Icons.visibility)),
+                supIcon: InkWell(onTap: () {}, child: Icon(Icons.visibility)),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 10.01),
               InkWell(
                 onTap: () {
                   setState(() {});
