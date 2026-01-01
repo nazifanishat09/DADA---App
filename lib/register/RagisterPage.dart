@@ -148,7 +148,7 @@ class _RagisterPageState extends State<RagisterPage> {
                 title: "Your Password",
                 supIcon: InkWell(onTap: () {}, child: Icon(Icons.visibility)),
               ),
-              SizedBox(height: 10.01),
+              SizedBox(height: 10),
               InkWell(
                 onTap: () {
                   setState(() {});
