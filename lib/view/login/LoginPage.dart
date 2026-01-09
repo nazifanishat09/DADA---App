@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 10),
                 TextFormFieldWidget(
                   supIcon: InkWell(
-                    onTap: (){},child: Icon(Icons.visibility,color: Colors.grey,),
+                    // onTap: (){} child:Icon(Icons.visibility_off,color: Colors.grey,) :Icon(Icons.visibility,color: Colors.grey,),
                   ),
                   isActive: true,
                   phoneC: passC,
