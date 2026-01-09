@@ -4,10 +4,11 @@ class TextFormFieldWidget extends StatelessWidget {
   const TextFormFieldWidget({
     super.key,
     required this.phoneC,
-     this.validator,
+    this.validator,
     required this.title,
     this.isActive,
-    this.onTep, this.supIcon,
+    this.onTep,
+    this.supIcon,
   });
 
   final TextEditingController phoneC;

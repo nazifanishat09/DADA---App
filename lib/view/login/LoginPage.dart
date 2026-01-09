@@ -131,6 +131,10 @@ class _LoginPageState extends State<LoginPage> {
                 Text("Password"),
                 SizedBox(height: 10),
                 TextFormFieldWidget(
+                  supIcon: InkWell(
+                    onTap: (){},child: Icon(Icons.visibility,color: Colors.grey,),
+                  ),
+                  isActive: true,
                   phoneC: passC,
                   validator: (v) {
                     if (v == null || v.isEmpty) {
