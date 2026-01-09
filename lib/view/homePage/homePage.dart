@@ -4,10 +4,8 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 
-import '../CartPage.dart';
-import '../CategoriePage.dart';
-import '../ProductsDetails.dart';
-import '../ProfilePage4.dart';
+import '../../ProfilePage4.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,9 +1,9 @@
 import 'package:appdada/bottomBer.dart';
-import 'package:appdada/widget/textFormField.dart';
 import 'package:flutter/material.dart';
 
 import '../login/LoginPage.dart';
 import '../homePage/homePage.dart';
+import '../widget/textFormField.dart';
 import '../widget/textWidget.dart';
 
 class RagisterPage extends StatefulWidget {
